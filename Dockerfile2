@@ -1,0 +1,14 @@
+# Use the official Python base image with Python 3.7
+FROM python:3.7
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy all files from the current directory to the working directory
+COPY . /app
+
+# Install the Python dependencies from requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Run the main.py script
+CMD ["python", "main.py"]
